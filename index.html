@@ -17,6 +17,7 @@
 	var canvas = document.getElementById("myCanvas");
 	var ctx = canvas.getContext("2d");
 	var x = 100;
+	var z = 105;
 	var y = canvas.height/2;
 	var dx = 2;
 	var dy = -2;
@@ -25,6 +26,7 @@
 	var leftPressed = false;
 	var upPressed = false;
 	var downPressed = false;
+	var spacePressed = false;
 
 	document.addEventListener("keydown", keyDownHandler, false);
 	document.addEventListener("keyup", keyUpHandler, false);
@@ -43,6 +45,9 @@
 	    else if(e.key == "Down" || e.key == "ArrowDown") {
 		downPressed = true;
 	    }
+	    else if(e.key == " " || e.key == "Spacebar") {
+		spacePressed = true;
+	    }
 	}
 
 	function keyUpHandler(e) {
@@ -58,6 +63,9 @@
 	    else if(e.key == "Down" || e.key == "ArrowDown") {
 		downPressed = false;
 	    }
+	    else if(e.key == " " || e.key == "Spacebar") {
+		spacePressed = false;
+	    }
 	}
 
 	//ball graphics
@@ -70,6 +78,15 @@
 	ctx.arc(x, y, ballRadius, 0, Math.PI*2);
 	}
 
+	//Weapon grapics
+	function drawWeapon() {
+	    ctx.beginPath();
+	    ctx.rect(z, y+5, 30, 10);
+	    ctx.fillStyle = "#0095DD";
+	    ctx.fill();
+	    ctx.closePath();
+	}
+
 
 
 
@@ -77,6 +94,7 @@
 	function draw() {
 	    ctx.clearRect(0, 0, canvas.width, canvas.height);
 	    drawBall();
+	    drawWeapon();
 
 
 
@@ -102,11 +120,17 @@
 	else if(downPressed) {
 	    y += 2;
 	    if (y + ballRadius > canvas.height){
-		y = canvas.height - ballRadius;
-
+			y = canvas.height - ballRadius;
 	    }
 	}
 
+	if(spacePressed) {
+		z+=5;
+		if (z + ballRadius > canvas.width){
+			z= x;
+		}
+
+	}
 
 	//outlining
 	ctx.beginPath();
