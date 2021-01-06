@@ -10,11 +10,10 @@
     margin: auto;
 }
 #character{
-    content: "🍔";
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background-color: blue;
+    background-color: "🍔";
     position:relative;
     top: 170px;
 }
