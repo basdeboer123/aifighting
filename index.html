@@ -69,7 +69,8 @@
 	//ball graphics
 	function drawBall() {
 	    ctx.beginPath();
-	    ctx.arc(x, y, 20, 0, Math.PI*2);
+	    //ctx.arc(x, y, 20, 0, Math.PI*2);
+      ctx.fillText('😎', x, y)
 	    ctx.fillStyle = "#0095DD";
 	    ctx.fill();
 	    ctx.closePath();
