@@ -9,14 +9,16 @@
     border: 1px solid black;
     margin: auto;
 }
-#character{
+#character::before{
+    content: "🔥";
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background-color: "🍔";
+    background-color: blue;
     position:relative;
     top: 170px;
 }
+
 .animate{
     animation: jump 0.5s linear;
 }
