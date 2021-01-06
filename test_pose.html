@@ -19,7 +19,8 @@
 const videoElement = document.getElementsByClassName('input_video')[0];
 const canvasElement = document.getElementsByClassName('output_canvas')[0];
 const canvasCtx = canvasElement.getContext('2d');
-
+var kekw = 0;
+var prevkekw = 0;
 function onResults(results) {
   canvasCtx.save();
   canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
@@ -29,8 +30,25 @@ function onResults(results) {
                  {color: '#00FF00', lineWidth: 4});
   drawLandmarks(canvasCtx, results.poseLandmarks,
                 {color: '#FF0000', lineWidth: 2});
+  
+  const kekw = results.poseLandmarks[0]['y'];
+  if (prevkekw != 0 ) {
+	if ((prevkekw - kekw) > 0.07){
+		if (Math.abs(kekw -0.5) > 0.18){
+			console.log("Spring");
+		};
+		
+	}
+	else if ((prevkekw - kekw) < -0.07){
+		if (Math.abs(kekw -0.5) > 0.18){
+			console.log("Buk");
+		};
+		
+	}
+};
+  prevkekw = kekw	
   canvasCtx.restore();
-}
+};
 
 const pose = new Pose({locateFile: (file) => {
   return `https://cdn.jsdelivr.net/npm/@mediapipe/pose/${file}`;
@@ -49,7 +67,7 @@ const camera = new Camera(videoElement, {
   width: 1280,
   height: 720
 });
-console.log(pose)
+
 camera.start();
 
 </script>
