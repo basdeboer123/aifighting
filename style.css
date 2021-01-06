@@ -40,16 +40,15 @@
     0%{left: 500px}
     100%{left: -20px}
 }
-.clock::before{
-    content: "\01F525";
+#clock{
     width: 70px;
     height: 70px;
+    border-radius: 50%;
+    background-color: red;
     position:fixed;
     top: 70px;
     right: 400px;
 }
-
-
 
 p{
     text-align: center;
