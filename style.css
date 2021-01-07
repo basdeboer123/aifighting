@@ -30,9 +30,9 @@
 #block{
     background-color: green;
     width: 30px;
-    height: 75px;
+    height: 60px;
     position: relative;
-    top: 95px;
+    top: 110px;
     left: 500px;
     animation: block 1s infinite linear;
 }
@@ -45,11 +45,24 @@
     height: 70px;
     border-radius: 50%;
     background-color: red;
-    position:fixed;
-    top: 70px;
-    right: 400px;
-}
+    position:relative;
+    bottom: 60px;
+    left: 400px;
 
+}
+#block2{
+    background-color: green;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: 0px;
+    left: 500px;
+    animation: block 2.5s infinite linear;
+}
+@keyframes block{
+    0%{left: 500px}
+    100%{left: -20px}
+}
 p{
     text-align: center;
 }
