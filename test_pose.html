@@ -21,6 +21,7 @@ const canvasElement = document.getElementsByClassName('output_canvas')[0];
 const canvasCtx = canvasElement.getContext('2d');
 var kekw = 0;
 var prevkekw = 0;
+var centery = 0
 function onResults(results) {
   canvasCtx.save();
   canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
@@ -34,18 +35,22 @@ function onResults(results) {
   const kekw = results.poseLandmarks[0]['y'];
   if (prevkekw != 0 ) {
 	if ((prevkekw - kekw) > 0.07){
-		if (Math.abs(kekw -0.5) > 0.18){
+		if (Math.abs(kekw - centery) > 0.17){
 			console.log("Spring");
 		};
 		
 	}
-	else if ((prevkekw - kekw) < -0.07){
-		if (Math.abs(kekw -0.5) > 0.18){
+	else if ((prevkekw - kekw) < -0.05){
+		if (Math.abs(kekw - centery) > 0.17){
 			console.log("Buk");
 		};
 		
 	}
-};
+}
+  else {
+		centery = kekw;
+  
+  };
   prevkekw = kekw	
   canvasCtx.restore();
 };
