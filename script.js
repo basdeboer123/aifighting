@@ -19,16 +19,16 @@ var checkDead = setInterval(function() {
     }else{
         counter++;
         if(counter/100 > 5 && counter/100 < 11){
-            block.style.animation = "block 3s infinite linear";
+            block.style.animation = "block 3.5s infinite linear";
         }
         else if(counter/100 > 10 && counter/100 < 16){
-            block.style.animation = "block 2s infinite linear";
+            block.style.animation = "block 3s infinite linear";
         }
         else if(counter/100 > 15 && counter/100 < 21){
-            block.style.animation = "block 1s infinite linear";
+            block.style.animation = "block 2.5s infinite linear";
         }
         else if(counter/100 > 20){
-            block.style.animation = "block 0.5s infinite linear";
+            block.style.animation = "block 1s infinite linear";
         }
         document.getElementById("scoreSpan").innerHTML = Math.floor(counter/100);
     }
