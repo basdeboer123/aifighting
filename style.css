@@ -15,16 +15,16 @@
     border-radius: 50%;
     background-color: blue;
     position:relative;
-    top: 170px;
+    top: 85px;
 }
 .animate{
     animation: jump 1s linear;
 }
 @keyframes jump{
-    0%{top: 150px;}
-    30%{top: 100px;}
-    70%{top: 100px;}
-    100%{top: 150px;}
+    0%{top: 75px;}
+    30%{top: 50px;}
+    70%{top: 10px;}
+    100%{top: 75px;}
 }
 
 #block{
