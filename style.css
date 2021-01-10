@@ -11,7 +11,7 @@
 }
 #character{
     background-image: url("slp.gif");
-    position:relative;
+    position:fixed;
     top: 85px;
     width: 30px;
     height: 42px;
@@ -25,13 +25,20 @@
     70%{top: 10px;}
     100%{top: 75px;}
 }
-
+/*
+@keyframes jumpdown{
+    0%{top: 75px;}
+    30%{top: 100px;}
+    70%{top: 140px;}
+    100%{top: 75px;}
+}
+*/
 #block{
     background-color: green;
     width: 30px;
-    height: 60px;
+    height: 100px;
     position: relative;
-    top: 110px;
+    top: 100px;
     left: 500px;
     animation: block 4s infinite linear;
 }
@@ -39,29 +46,30 @@
     0%{left: 500px}
     100%{left: -20px}
 }
-#clock{
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    background-color: red;
-    position:relative;
-    bottom: 60px;
-    left: 400px;
 
-}
 #block2{
-    background-color: green;
+    background-color: red;
     width: 30px;
-    height: 30px;
+    height: 100px;
     position: relative;
-    top: 0px;
+    bottom: 50%;
     left: 500px;
-    animation: block 2.5s infinite linear;
+    animation: block 6s infinite linear;
 }
-@keyframes block{
+@keyframes block2{
     0%{left: 500px}
     100%{left: -20px}
 }
+/* #clock{
+    width: 70px;
+    height: 70px;
+    border-radius: 15px;
+    background-color: red;
+    position: relative;
+    top: -100px;
+    left: 400px;
+}
+*/
 body {
  background-color: #ADD8E6;
 }
