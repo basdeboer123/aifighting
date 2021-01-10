@@ -10,12 +10,11 @@
     margin: auto;
 }
 #character{
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: blue;
+    background-image: url("slp.gif");
     position:relative;
     top: 85px;
+    width: 30px;
+    height: 42px;
 }
 .animate{
     animation: jump 1s linear;
@@ -62,6 +61,9 @@
 @keyframes block{
     0%{left: 500px}
     100%{left: -20px}
+}
+body {
+ background-color: #ADD8E6;
 }
 p{
     text-align: center;
