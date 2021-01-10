@@ -7,6 +7,8 @@
     width: 500px;
     height: 200px;
     border: 1px solid black;
+    background-image: url("wolken.jpg");
+    position: center;
     margin: auto;
 }
 #character{
@@ -25,6 +27,7 @@
     70%{top: 10px;}
     100%{top: 75px;}
 }
+
 /*
 @keyframes jumpdown{
     0%{top: 75px;}
