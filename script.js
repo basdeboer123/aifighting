@@ -8,6 +8,13 @@ function jump(){
         character.classList.remove("animate");
     },900);
 }
+function jumpdown(){
+    if(comm == 1){return}
+    character.classList.add("animatedown");
+    setTimeout(function(){
+        character.classList.remove("animatedown");
+    },900);
+}
 var checkDead = setInterval(function() {
     let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));

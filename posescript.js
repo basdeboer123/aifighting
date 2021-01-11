@@ -19,26 +19,26 @@ function onResults(results) {
                  {color: '#00FF00', lineWidth: 4});
   drawLandmarks(canvasCtx, results.poseLandmarks,
                 {color: '#FF0000', lineWidth: 2});
-  
+
   const kekw = results.poseLandmarks[10]['y'];
   center_update = center_update + kekw
   if (kekw != 0 && cdtime <= 0 && comm == 0) {
-	if ((kekw - centery) < -0.003){
+	if ((kekw - centery) < -0.005){
 			console.log("Spring");
 			cdtime = 30;
-			jump()	
-		}	
-	else if ((kekw - centery) > 0.003 ){
+			jump()
+		}
+	else if ((kekw - centery) > 0.005 ){
 			console.log("Buk");
 			cdtime = 30;
 			comm = -1;
-			
+			jumpdown()
 		}
 	}
   else if (prevkekw == 0){
 		centery = kekw;
-		
-  
+
+
   }
   else{
 		cdtime--;
