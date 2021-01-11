@@ -18,16 +18,16 @@ function onResults(results) {
   
   const kekw = results.poseLandmarks[0]['y'];
   if (prevkekw != 0 ) {
-	if ((prevkekw - kekw) > 0.07){
-		if (Math.abs(kekw - centery) > 0.17){
+	if ((prevkekw - kekw) > 0.05){
+		if (Math.abs(kekw - centery) > 0.05){
 			console.log("Spring");
-			comm = 1
+			jump()
 			
 		};
 		
 	}
-	else if ((prevkekw - kekw) < -0.05){
-		if (Math.abs(kekw - centery) > 0.17){
+	else if ((prevkekw - kekw) < -0.051){
+		if (Math.abs(kekw - centery) > 0.05){
 			console.log("Buk");
 			comm = -1
 		};
@@ -37,10 +37,6 @@ function onResults(results) {
   else {
 		centery = kekw;
   
-  };
-  if (comm != 0){
-	jump()  
-	  
   };
   prevkekw = kekw;
   canvasCtx.restore();
@@ -52,8 +48,8 @@ const pose = new Pose({locateFile: (file) => {
 pose.setOptions({
   upperBodyOnly: true,
   smoothLandmarks: true,
-  minDetectionConfidence: 0.5,
-  minTrackingConfidence: 0.5
+  minDetectionConfidence: 0.9,
+  minTrackingConfidence: 0.9
 });
 pose.onResults(onResults);
 const camera = new Camera(videoElement, {
