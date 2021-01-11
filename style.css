@@ -41,8 +41,8 @@
 }
 
 #block{
-    background-color: green;
-    width: 30px;
+    background-image: url("tr2.gif");
+    width: 50px;
     height: 100px;
     position: relative;
     top: 100px;
@@ -55,8 +55,8 @@
 }
 
 #block2{
-    background-color: red;
-    width: 30px;
+    background-image: url("spin.gif");
+    width: 50px;
     height: 100px;
     position: relative;
     bottom: 50%;
