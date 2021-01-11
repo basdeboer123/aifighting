@@ -4,9 +4,13 @@ const canvasCtx = canvasElement.getContext('2d');
 var kekw = 0;
 var prevkekw = 0;
 var centery = 0;
-var comm = 0
+var comm = 0;
+var cdtime = 0;
+var center_update = 0;
+var center_refresh = 0;
 function onResults(results) {
-  comm = 0
+  comm = 0;
+  center_refresh ++;
   canvasCtx.save();
   canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
   canvasCtx.drawImage(
@@ -16,28 +20,34 @@ function onResults(results) {
   drawLandmarks(canvasCtx, results.poseLandmarks,
                 {color: '#FF0000', lineWidth: 2});
   
-  const kekw = results.poseLandmarks[0]['y'];
-  if (prevkekw != 0 ) {
-	if ((prevkekw - kekw) > 0.05){
-		if (Math.abs(kekw - centery) > 0.05){
+  const kekw = results.poseLandmarks[10]['y'];
+  center_update = center_update + kekw
+  if (kekw != 0 && cdtime <= 0 && comm == 0) {
+	if ((kekw - centery) < -0.003){
 			console.log("Spring");
-			jump()
-			
-		};
-		
-	}
-	else if ((prevkekw - kekw) < -0.051){
-		if (Math.abs(kekw - centery) > 0.05){
+			cdtime = 30;
+			jump()	
+		}	
+	else if ((kekw - centery) > 0.003 ){
 			console.log("Buk");
-			comm = -1
-		};
-		
+			cdtime = 30;
+			comm = -1;
+			
+		}
 	}
-}
-  else {
+  else if (prevkekw == 0){
 		centery = kekw;
+		
   
+  }
+  else{
+		cdtime--;
+	    comm = 0;
   };
+  if ((center_refresh % 4) == 0){
+		centery = center_update/5;
+		center_update = 0;
+	};
   prevkekw = kekw;
   canvasCtx.restore();
 };
@@ -48,16 +58,16 @@ const pose = new Pose({locateFile: (file) => {
 pose.setOptions({
   upperBodyOnly: true,
   smoothLandmarks: true,
-  minDetectionConfidence: 0.9,
-  minTrackingConfidence: 0.9
+  minDetectionConfidence: 0.5,
+  minTrackingConfidence: 0.5
 });
 pose.onResults(onResults);
 const camera = new Camera(videoElement, {
   onFrame: async () => {
     await pose.send({image: videoElement});
   },
-  width: 1280,
-  height: 720
+  width: 720,
+  height: 480
 });
 
 camera.start();
