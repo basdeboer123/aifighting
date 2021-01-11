@@ -1,3 +1,13 @@
+const videoElement = document.getElementsByClassName('input_video')[0];
+const canvasElement = document.getElementsByClassName('output_canvas')[0];
+const canvasCtx = canvasElement.getContext('2d');
+var kekw = 0;
+var prevkekw = 0;
+var centery = 0;
+var comm = 0;
+var cdtime = 0;
+var center_update = 0;
+var center_refresh = 0;
 function onResults(results) {
   comm = 0;
   center_refresh ++;
@@ -51,3 +61,23 @@ function onResults(results) {
   
   
 };
+
+const pose = new Pose({locateFile: (file) => {
+  return `https://cdn.jsdelivr.net/npm/@mediapipe/pose/${file}`;
+}});
+pose.setOptions({
+  upperBodyOnly: true,
+  smoothLandmarks: true,
+  minDetectionConfidence: 0.5,
+  minTrackingConfidence: 0.5
+});
+pose.onResults(onResults);
+const camera = new Camera(videoElement, {
+  onFrame: async () => {
+    await pose.send({image: videoElement});
+  },
+  width: 720,
+  height: 480
+});
+
+camera.start();
