@@ -23,14 +23,14 @@ function onResults(results) {
   const kekw = results.poseLandmarks[10]['y'];
   center_update = center_update + kekw
   if (kekw != 0 && cdtime <= 0 && comm == 0) {
-	if ((kekw - centery) < -0.005){
+	if ((kekw - centery) < -0.08){
 			console.log("Spring");
-			cdtime = 30;
+			cdtime = 60;
 			jump()
 		}
-	else if ((kekw - centery) > 0.005 ){
+	else if ((kekw - centery) > 0.05 ){
 			console.log("Buk");
-			cdtime = 30;
+			cdtime = 60;
 			comm = -1;
 			jumpdown()
 		}
@@ -44,7 +44,7 @@ function onResults(results) {
 		cdtime--;
 	    comm = 0;
   };
-  if ((center_refresh % 4) == 0){
+  if ((center_refresh % 5) == 0){
 		centery = center_update/5;
 		center_update = 0;
 	};
