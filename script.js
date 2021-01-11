@@ -25,45 +25,23 @@ var checkDead = setInterval(function() {
         block.style.animation = "block 4s infinite linear";
     }else{
         counter++;
-        if(counter/100 > 2 && counter/100 < 5){
-            block.style.animation = "block 3.9s infinite linear";
-        }
-        else if(counter/100 > 4 && counter/100 < 7){
-            block.style.animation = "block 3.8s infinite linear";
-        }
-        else if(counter/100 > 6 && counter/100 < 9){
-            block.style.animation = "block 3.7s infinite linear";
-        }
-        else if(counter/100 > 8 && counter/100 < 11){
-            block.style.animation = "block 3.6s infinite linear";
-        }
-        else if(counter/100 > 10 && counter/100 < 13){
+        //Values for boundaries can be adjusted to smoothen the gameplay
+        if(counter > 800 && counter < 2100){
             block.style.animation = "block 3.5s infinite linear";
         }
-        else if(counter/100 > 12 && counter/100 < 15){
-            block.style.animation = "block 3.4s infinite linear";
-        }
-        else if(counter/100 > 14 && counter/100 < 17){
-            block.style.animation = "block 3.3s infinite linear";
-        }
-        else if(counter/100 > 16 && counter/100 < 19){
-            block.style.animation = "block 3.2s infinite linear";
-        }
-        else if(counter/100 > 18 && counter/100 < 21){
-            block.style.animation = "block 3.1s infinite linear";
-        }
-        else if(counter/100 > 20 && counter/100 < 23){
+        else if(counter > 2099 && counter < 3000){
             block.style.animation = "block 3s infinite linear";
         }
-        else if(counter/100 > 22 && counter/100 < 25){
-            block.style.animation = "block 2.9s infinite linear";
+        else if(counter > 2999 && counter < 3900){
+            block.style.animation = "block 2.5s infinite linear";
         }
-        else if(counter/100 > 24 && counter/100 < 27){
-            block.style.animation = "block 2.8s infinite linear";
+        else if(counter > 3899 && counter < 4750){
+            block.style.animation = "block 2s infinite linear";
         }
-        else if(counter/100 > 26 && counter/100 < 29){
-            block.style.animation = "block 2.7s infinite linear";
+        else if(counter > 4749 && counter < 6000){
+            block.style.animation = "block 1.5s infinite linear";
         }
+
         document.getElementById("scoreSpan").innerHTML = Math.floor(counter/100);
     }
 }, 10);
