@@ -48,6 +48,11 @@ function onResults(results) {
 		centery = center_update/5;
 		center_update = 0;
 	};
+  if ((cdtime == 0) && (results.poseLandmarks[19]['y'] || results.poseLandmarks[20]['y'])){
+	  if ((results.poseLandmarks[19]['y'] < results.poseLandmarks[11]['y'])||(results.poseLandmarks[20]['y'] < results.poseLandmarks[10]['y'])){
+		  console.log("PEW PEW");
+		  cdtime = 60;
+	  };	
   prevkekw = kekw;
   canvasCtx.restore();
 };
