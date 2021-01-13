@@ -37,7 +37,7 @@
 }
 @keyframes shoot{
 from {right: 0px;}
-  to {left: 500px;}
+  to {left: 300px;}
 }
 @keyframes jump{
     0%{top: 75px;}
