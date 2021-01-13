@@ -51,7 +51,7 @@ function onResults(results) {
 	};
   if ((cdtime2 <= 0) && (results.poseLandmarks[19]['y']|| results.poseLandmarks[20]['y'])){
 	  if((results.poseLandmarks[19]['y'] < results.poseLandmarks[11]['y'])||(results.poseLandmarks[20]['y'] < results.poseLandmarks[12]['y'])){
-		  cdtime2 = 60;
+		  cdtime2 = 10;
 		  console.log("Shoot");
 		  shoot();
 	  };    
