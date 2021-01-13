@@ -17,9 +17,9 @@ function jumpdown(){
     },900);
 }
 function shoot(){
-    weapon.classList.add("shoot");
+    weapon.classList.add("animateshoot");
     setTimeout(function(){
-        weapon.classList.remove("shoot");
+        weapon.classList.remove("animateshoot");
     },900);
 }
 var checkDead = setInterval(function() {
