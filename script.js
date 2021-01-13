@@ -16,6 +16,12 @@ function jumpdown(){
         character.classList.remove("animatedown");
     },900);
 }
+function shoot(){
+    weapon.classList.add("shoot");
+    setTimeout(function(){
+        weapon.classList.remove("shoot");
+    },900);
+}
 var checkDead = setInterval(function() {
     let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
