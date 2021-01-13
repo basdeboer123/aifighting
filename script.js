@@ -1,5 +1,6 @@
 var character = document.getElementById("character");
 var block = document.getElementById("block");
+var villain = document.getElementById("villain");
 var counter=0;
 function jump(){
     if(comm == 1){return}
