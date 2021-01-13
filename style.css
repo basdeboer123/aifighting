@@ -36,8 +36,10 @@
     animation: shoot 1s linear;
 }
 @keyframes shoot{
-from {right: 0px;}
-  to {left: 300px;}
+    0%{left: 700px;}
+    30%{left: 775px;}
+    70%{left: 850px;}
+    100%{left: 925px;}
 }
 @keyframes jump{
     0%{top: 75px;}
