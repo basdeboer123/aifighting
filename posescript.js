@@ -54,6 +54,7 @@ function onResults(results) {
 		  shoot();
 		  cdtime2 = 60;
 	  };
+  }
   else {
 	  cdtime2--;
   }
@@ -62,6 +63,7 @@ function onResults(results) {
   
   
 };
+
 
 const pose = new Pose({locateFile: (file) => {
   return `https://cdn.jsdelivr.net/npm/@mediapipe/pose/${file}`;
