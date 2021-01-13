@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            /* overflow-x: hidden; */
+        }
+        
+        body {
+            background-color: #ADD8E6;
+        }
+        
+        .game {
+            width: 500px;
+            height: 200px;
+            border: 1px solid black;
+            margin: auto;
+            background-image: url("cloud_background.gif");
+            background-color: #ADD8E6;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        .button {
+            background-color: #ffffff;
+            border: 1px solid rgb(0, 0, 0);
+            color: rgb(0, 0, 0);
+            padding: 10px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px;
+            width: 75px;
+            cursor: pointer;
+        }
+        
+        .introduction {
+            width: 500px;
+            margin: auto;
+        }
+        
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 2.5rem;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        function showHow() {
+            document.getElementById("introduction").innerHTML = "<h1>How you play the game:</h1>";
+        }
+
+        function showWhy() {
+            document.getElementById("introduction").innerHTML = "<h1>How you play the game:</h1>";
+        }
+
+        function myFunction() {
+            var x = document.getElementById("myDIV");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="game">
+        <div class="container">
+            <button class="button" type="button" onclick="document.location='indexpose.html'">PLAY</button>
+            <button class="button" type="button" onclick="myFunction()">WHY?</button>
+            <button class="button" type="button" onclick="myFunction()">HOW?</button>
+        </div>
+    </div>
+
+    <div class="introduction" id="introduction">
+        <div class="why">
+            <h1>
+                Why did we make this game?
+            </h1>
+            <p>
+                This game is made in a collaboration between AI Architects and four motivated AI students at the University of Amsterdam. By this game we wanted to show people one simple but important example of what is possible with Artificial Intelligence. To create
+                this game, we used <a href="https://arxiv.org/abs/1907.05047" target="_blank">BlazePose</a>. This is software which is able to detect humans upper-body motion.
+            </p>
+        </div>
+        <div class="how">
+            <h1>
+                How to play the game:
+            </h1>
+            <p>
+                Imagine you are sleeping and it is almost time to wake up, at any moment your alarm may ring. You try already to open your eyes but it is really a struggle, a fight against the sleep. This fight takes place here. You have to move well and avoid bad dreams,
+                spiders, and other obstacles. You do this by moving yourself litterally up and down, since the camera will detect your upper-body motion.
+            </p>
+        </div>
+        <footer>
+            &copy; 2021 <a href="https://aiheroes.io/" target="_blank">AI Architects</a>
+        </footer>
+</body>
+
+</html>
