@@ -49,11 +49,12 @@ function onResults(results) {
 		centery = center_update/5;
 		center_update = 0;
 	};
-  if ((cdtime2 == 0) && (results.poseLandmarks[19]['y'] || results.poseLandmarks[20]['y'])){
-	  if ((results.poseLandmarks[19]['y'] < results.poseLandmarks[11]['y'])||(results.poseLandmarks[20]['y'] < results.poseLandmarks[10]['y'])){
-		  shoot();
+  if ((cdtime2 <= 0) && (results.poseLandmarks[19]['y']|| results.poseLandmarks[20]['y'])){
+	  if((results.poseLandmarks[19]['y'] < results.poseLandmarks[11]['y'])||(results.poseLandmarks[20]['y'] < results.poseLandmarks[12]['y'])){
 		  cdtime2 = 60;
-	  };
+		  console.log("Shoot");
+		  shoot();
+	  };    
   }
   else {
 	  cdtime2--;
