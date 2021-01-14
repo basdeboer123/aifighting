@@ -2,6 +2,7 @@ var character = document.getElementById("character");
 var block = document.getElementById("block");
 var villain = document.getElementById("villain");
 var counter=0;
+var countervil=0;
 function jump(){
     if(comm == 1){return}
     character.classList.add("animate");
@@ -22,6 +23,13 @@ function shoot(){
         weapon.classList.remove("animateshoot");
     },900);
 }
+function villainfunc(){
+    villain.classList.add("animatevillain");
+    setTimeout(function(){
+        villain.classList.remove("animatevillain");
+    },4000);
+}
+
 var checkDead = setInterval(function() {
     let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
@@ -47,8 +55,12 @@ var checkDead = setInterval(function() {
         }
         else if(counter > 4749 && counter < 6000){
             block.style.animation = "block 1.5s infinite linear";
-        }
+        };
 
         document.getElementById("scoreSpan").innerHTML = Math.floor(counter/100);
+        //Function for activating villain, change values for quantity
+        if(counter/100==10|counter/100==20){
+          villainfunc();
+        };
     }
 }, 10);

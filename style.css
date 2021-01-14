@@ -25,6 +25,15 @@
     width: 20px;
     height: 20px;
 }
+
+#villain{
+  background-image: url("vil.gif");
+  position: fixed;
+  top: 85px;
+  right: 600px;
+  width: 44px;
+  height: 58px;
+}
 .animate{
     animation: jump 1s linear;
 }
@@ -35,11 +44,20 @@
 .animateshoot{
     animation: shoot 1s linear;
 }
+.animatevillain{
+    animation: villainmove 4s linear;
+}
 @keyframes shoot{
     0%{left: 700px;}
     30%{left: 775px;}
     70%{left: 850px;}
     100%{left: 925px;}
+}
+@keyframes villainmove{
+  0%{right: : 700px;}
+  30%{right: 800px;}
+  70%{right: 1000;}
+  100%{right: 1130px;}
 }
 @keyframes jump{
     0%{top: 75px;}
@@ -82,20 +100,8 @@
     0%{left: 500px}
     100%{left: -20px}
 }
-#villain{
-  background-image: url("vil.gif");
-  width: 44px;
-  height: 58px;
-  position: relative;
-  bottom: 50%;
-  left: 500px;
-  animation: block 5s infinite linear;
-}
-@@keyframes villain {
-    0%{left: 500px}
-    100%{left: -20px}
 
-}
+
 /* #clock{
     width: 70px;
     height: 70px;
