@@ -29,7 +29,15 @@ function villainfunc(){
         villain.classList.remove("animatevillain");
     },4000);
 }
-
+/*
+var checkMonster = setInterval(function() {
+    let villainTop = parseInt(window.getComputedStyle(villain).getPropertyValue("top"));
+    let kannuRight = parseInt(window.getComputedStyle(weapon).getPropertyValue("left"));
+    if(kannuRight<20 && kannuRight>-20 && villainTop>=82){
+        waepon.style.animation = "none";
+        villan verdwijnt...
+    }
+    */
 var checkDead = setInterval(function() {
     let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
