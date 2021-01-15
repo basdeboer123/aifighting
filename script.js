@@ -30,17 +30,20 @@ function villainfunc(){
         villain.classList.remove("animatevillain");
     },4000);
 }
-/*
 var checkMonster = setInterval(function() {
-    let villainTop = parseInt(window.getComputedStyle(villain).getPropertyValue("top"));
+    let villainTop = parseInt(window.getComputedStyle(villain).getPropertyValue("right"));
     let kannuRight = parseInt(window.getComputedStyle(weapon).getPropertyValue("left"));
-    if(kannuRight<20 && kannuRight>-20 && villainTop>=82){
+    if((villainTop != 600) && (Math.abs(kannuRight-villainTop) < 5)){
+		console.log("EWQEWQ")
+		villain.classList.remove("animatevillain");
+		weapon.classList.remove("animateshoot");
+		villain.classList.remove("animatevillain");
         waepon.style.animation = "none";
         alert("Game Over. score: "+Math.floor(counter/100));
         counter=0;
         block.style.animation = "block 4s infinite linear";
-    }
-*/
+    };
+}, 10);
 var checkDead = setInterval(function() {
     let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
