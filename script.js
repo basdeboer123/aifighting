@@ -52,7 +52,7 @@ var checkDead = setInterval(function() {
     }else{
         counter++;
         //Values for boundaries can be adjusted to smoothen the gameplay
-        if(counter > 800 && counter < 2100){
+        if(counter > 750 && counter < 2100){
             block.style.animation = "block 3.5s infinite linear";
         }
         else if(counter > 2099 && counter < 3000){
@@ -61,7 +61,7 @@ var checkDead = setInterval(function() {
         else if(counter > 2999 && counter < 3900){
             block.style.animation = "block 2.5s infinite linear";
         }
-        else if(counter > 3899 && counter < 4750){
+        else if(counter > 3999 && counter < 4750){
             block.style.animation = "block 2s infinite linear";
         }
         else if(counter > 4749 && counter < 6000){
