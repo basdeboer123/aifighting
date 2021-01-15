@@ -1,6 +1,7 @@
 var character = document.getElementById("character");
 var block = document.getElementById("block");
 var villain = document.getElementById("villain");
+var weapon = document.getElementById("weapon");
 var counter=0;
 var countervil=0;
 function jump(){
@@ -35,9 +36,11 @@ var checkMonster = setInterval(function() {
     let kannuRight = parseInt(window.getComputedStyle(weapon).getPropertyValue("left"));
     if(kannuRight<20 && kannuRight>-20 && villainTop>=82){
         waepon.style.animation = "none";
-        villan verdwijnt...
+        alert("Game Over. score: "+Math.floor(counter/100));
+        counter=0;
+        block.style.animation = "block 4s infinite linear";
     }
-    */
+*/
 var checkDead = setInterval(function() {
     let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
