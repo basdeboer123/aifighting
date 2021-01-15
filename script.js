@@ -44,7 +44,7 @@ var checkMonster = setInterval(function() {
 var checkDead = setInterval(function() {
     let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
-    if(blockLeft<20 && blockLeft>-20 && characterTop>=82){
+    if(blockLeft<20 && blockLeft>-20 && characterTop>=168){
         block.style.animation = "none";
         alert("Game Over. score: "+Math.floor(counter/100));
         counter=0;
