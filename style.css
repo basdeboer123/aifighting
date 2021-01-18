@@ -93,7 +93,7 @@
     height: 200px;
     position: relative;
     bottom: 54%;
-    left: 1000px;
+    left: 800px;
     animation: block2 6s infinite linear;
     animation-delay: 2s;
 }
