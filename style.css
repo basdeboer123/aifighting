@@ -76,9 +76,9 @@
 #block{
     background-image: url("treefin.gif");
     width: 70px;
-    height: 220px;
+    height: 200px;
     position: relative;
-    top: 180px;
+    top: 190px;
     left: 1000px;
     animation: block 4s infinite linear;
 }
