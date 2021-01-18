@@ -43,6 +43,7 @@ var checkMonster = setInterval(function() {
         alert("Game Over. score: "+Math.floor(counter/100));
         counter=0;
         block.style.animation = "block 4s infinite linear";
+        block2.style.animation = "block2 4s 2s infinite linear";
 	}
 }, 10);
 var checkDead = setInterval(function() {
@@ -53,23 +54,29 @@ var checkDead = setInterval(function() {
         alert("Game Over. score: "+Math.floor(counter/100));
         counter=0;
         block.style.animation = "block 4s infinite linear";
+        block2.style.animation = "block2 4s 2s infinite linear";
     }else{
         counter++;
         //Values for boundaries can be adjusted to smoothen the gameplay
         if(counter > 720 && counter < 2100){
             block.style.animation = "block 3.5s infinite linear";
+            block2.style.animation = "block2 3.5s 1s infinite linear";
         }
         else if(counter > 2099 && counter < 3000){
             block.style.animation = "block 3s infinite linear";
+            block2.style.animation = "block2 3s 1s infinite linear";
         }
         else if(counter > 2999 && counter < 3900){
             block.style.animation = "block 2.5s infinite linear";
+            block2.style.animation = "block2 2.5s 1s infinite linear";
         }
         else if(counter > 3999 && counter < 4750){
             block.style.animation = "block 2s infinite linear";
+            block2.style.animation = "block2 2s 0.5s infinite linear";
         }
         else if(counter > 4749 && counter < 6000){
             block.style.animation = "block 1.5s infinite linear";
+            block2.style.animation = "block2 1.5s 0.5s infinite linear";
         };
 
         document.getElementById("scoreSpan").innerHTML = Math.floor(counter/100);
