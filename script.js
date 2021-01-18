@@ -42,12 +42,12 @@ var checkMonster = setInterval(function() {
     },0);
     block.style.animation = "block 4s infinite linear";
     }
-	else if ((villainright != 600) && ((kannuleft-villainright) <=-450)) {
+	else if ((villainright != 600) && ((character-villainright) <=-450)) {
 		block.style.animation = "none";
         alert("Game Over. score: "+Math.floor(counter/100));
         counter=0;
         block.style.animation = "block 4s infinite linear";
-		
+
 	}
 }, 10);
 var checkDead = setInterval(function() {
