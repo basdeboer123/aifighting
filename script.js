@@ -61,7 +61,7 @@ var checkDead = setInterval(function() {
     }else{
         counter++;
         //Values for boundaries can be adjusted to smoothen the gameplay
-        if(counter > 750 && counter < 2100){
+        if(counter > 720 && counter < 2100){
             block.style.animation = "block 3.5s infinite linear";
         }
         else if(counter > 2099 && counter < 3000){
@@ -79,7 +79,7 @@ var checkDead = setInterval(function() {
 
         document.getElementById("scoreSpan").innerHTML = Math.floor(counter/100);
         //Function for activating villain, change values for quantity
-        if(counter/100==10|counter/100==20){
+        if((counter/100)%7==0 && (counter!= 0)){
           villainfunc();
         };
     }
