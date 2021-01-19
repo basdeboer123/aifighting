@@ -39,7 +39,7 @@ var checkMonster = setInterval(function() {
         weapon.classList.remove("animateshoot");
         villain.classList.remove("animatevillain");
     }
-	  else if ((villainright != 600) && ((characterright-villainright)==0)) {
+	  else if ((villainright != 600) && ((characterright-villainright)<10)) {
 		    block.style.animation = "none";
         alert("Game Over. score: "+Math.floor(counter/100));
         counter=0;
