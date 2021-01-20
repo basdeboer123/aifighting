@@ -9,6 +9,7 @@ var cdtime = 0;
 var cdtime2 = 0;
 var center_update = 0;
 var center_refresh = 0;
+var audio = new Audio('KEK.wav');
 function onResults(results) {
   comm = 0;
   center_refresh ++;
@@ -53,6 +54,7 @@ function onResults(results) {
 	  if((results.poseLandmarks[19]['y'] < results.poseLandmarks[11]['y'])||(results.poseLandmarks[20]['y'] < results.poseLandmarks[12]['y'])){
 		  cdtime2 = 10;
 		  console.log("Shoot");
+		  audio.play();
 		  shoot();
 	  };    
   }
