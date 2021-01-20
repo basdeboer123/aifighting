@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Fighting Challange</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        body {
+            background-color: #ADD8E6;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        header {
+            text-align: center;
+            padding: 25px;
+        }
+
+        .game {
+            width: 1000px;
+            height: 400px;
+            border: 1px solid black;
+            margin: auto;
+            background-image: url("cloud_background.gif");
+            background-color: #ADD8E6;
+            background-size: cover;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-top: 0px;
+        }
+
+        .button {
+            background-color: #ffffff;
+            border: 1px solid rgb(0, 0, 0);
+            color: rgb(0, 0, 0);
+            padding: 10px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            font-size: 22px;
+            margin: 10px;
+            width: 150px;
+            height: 50px;
+            cursor: pointer;
+        }
+
+        .introduction {
+            align-items: center;
+            width: 500px;
+            margin: auto;
+            padding: 25px;
+            display: block;
+            padding-bottom: 2.5rem;
+        }
+
+        ul {
+            list-style-type: circle;
+        }
+
+        #how {
+            margin: auto;
+        }
+
+        footer {
+            bottom: 0;
+            width: 500px;
+            height: 2.5rem;
+            text-align: center;
+            margin: auto;
+        }
+
+        input {
+            background-color: #ffffff;
+            border: 1px solid rgb(0, 0, 0);
+            color: rgb(0, 0, 0);
+            padding: 10px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            font-size: px;
+            /* margin: 10px; */
+            width: 150px;
+            /* height: 50px; */
+            cursor: pointer;
+        }
+        /* .write {} */
+    </style>
+
+    <script>
+        function showWhy() {
+            var x = document.getElementById("why");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+            var y = document.getElementById("how");
+            if (y.style.display !== "none") {
+                y.style.display = "none";
+            }
+        }
+
+        function showHow() {
+            var x = document.getElementById("how");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+            var y = document.getElementById("why");
+            if (y.style.display !== "none") {
+                y.style.display = "none";
+            }
+        }
+
+        function askName() {
+            var x = document.getElementById("button-wrap");
+            if (x.style.display !== "none") {
+                x.style.display = "none";
+            }
+            var x = document.getElementById("name");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!-- <iframe src="test_eurovision.mp3" allow="autoplay" id="iframeAudio">
+    </iframe> -->
+
+    <!-- <audio autoplay loop id="playAudio">
+        <source src="test_eurovision.mp3">
+    </audio> -->
+
+    <header>
+        <h1>Fighting The Alarm</h1>
+    </header>
+
+    <div class="game">
+        <div id="button-wrap" class="container" style="display: flex">
+            <button class="button" type="button" onclick="askName()">PLAY</button>
+            <button class=" button" type="button" onclick="showWhy() ">WHY?</button>
+            <button class="button" type="button" onclick="showHow() ">HOW?</button>
+        </div>
+        <div>
+            <form id="name" style="display: none;">
+                Enter your name: <input type="text" name="fname"><br><br>
+                <button class="button" type="button" onclick="document.location='indexpose.html'">Let's Go!</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="introduction ">
+        <div id="why" style="display: none;">
+            <h1>
+                Why did we make this game?
+            </h1>
+            <p>
+                This game is made in a collaboration between AI Architects and four motivated AI students at the University of Amsterdam. By this game we wanted to show people one simple but important example of what is possible with Artificial Intelligence. To create
+                this game, we used <a href="https://arxiv.org/abs/1907.05047" target="_blank">BlazePose</a>. This is software which is able to detect humans upper-body motion.
+            </p>
+        </div>
+        <div id="how" style="display: none;">
+            <h1>
+                How to play the game:
+            </h1>
+            <p>
+                Imagine you are sleeping and it is almost time to wake up, at any moment your alarm may ring. You try already to open your eyes, but it is really a struggle, a fight against the sleep. This fight takes place here. You have to move well and avoid bad dreams,
+                spiders, and other obstacles. You do this by moving yourself litterally up and down, since the camera will detect your upper-body motion.
+            </p>
+            <ul>
+                <li>
+                    To move up and down: use your head
+                </li>
+                <li>
+                    To shoot: raise your hand or should
+                </li>
+            </ul>
+            <p>
+                Underneath you can see the exact points the BlazePose software recognizes, we have a focus on number 0 for head and numbers 11 and 19 for left hand/shoulder and 12 and 20 right hand/shoulder.
+            </p>
+            <img src="blaze_pose_instruction.jpeg" alt="Blaze pose instruction" width="500" height="500">
+        </div>
+    </div>
+    <footer>
+        &copy; 2021 <a href="https://aiheroes.io/ " target="_blank ">AI Architects</a>
+    </footer>
+</body>
+
+</html>
