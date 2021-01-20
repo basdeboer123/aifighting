@@ -30,7 +30,8 @@ function villainfunc(){
     setTimeout(function(){
         villain.classList.remove("animatevillain");
     },4000);
-}
+  }
+
 var checkMonster = setInterval(function() {
     let villainright = parseInt(window.getComputedStyle(villain).getPropertyValue("right"));
     let kannuright = parseInt(window.getComputedStyle(weapon).getPropertyValue("right"));
@@ -41,33 +42,40 @@ var checkMonster = setInterval(function() {
     }
 	  else if ((villainright != 600) && ((characterright-villainright)<20)) {
 		    block.style.animation = "none";
+        block2.style.animation = "none";
         alert("Game Over. score: "+Math.floor(counter/100));
         counter=0;
-        block.style.animation = "block 4s infinite linear";
-        block2.style.animation = "block2 4s 2s  infinite linear";
 	}
 }, 10);
+
 var checkDead = setInterval(function() {
     let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
+    let blockupperLeft = parseInt(window.getComputedStyle(block2).getPropertyValue("left"));
     if(blockLeft<20 && blockLeft>-20 && characterTop>=168){
         block.style.animation = "none";
+        block2.style.animation = "none";
         alert("Game Over. score: "+Math.floor(counter/100));
         counter=0;
-        block.style.animation = "block 4s infinite linear";
-        block2.style.animation = "block2 4s 2s infinite linear";
-    }else{
+    }
+    else if(blockupperLeft<20 && blockupperLeft>-20 && characterTop<=170){
+            block.style.animation = "none";
+            block2.style.animation = "none";
+            alert("Game Over. score: "+Math.floor(counter/100));
+            counter=0;
+    }
+    else{
         counter++;
         //Values for boundaries can be adjusted to smoothen the gameplay
-        if(counter > 720 && counter < 2100){
-            block.style.animation = "block 3.5s infinite linear";
-            block2.style.animation = "block2 3.5s 1s infinite linear";
+        if(counter > 100 && counter < 900){
+            block.style.animation = "block 4s infinite linear";
+            block2.style.animation = "block2 4s 2s infinite linear";
         }
-        else if(counter > 2099 && counter < 3000){
+        else if(counter > 899 && counter < 2500){
             block.style.animation = "block 3s infinite linear";
-            block2.style.animation = "block2 3s 1s infinite linear";
+            block2.style.animation = "block2 3s 1.5s infinite linear";
         }
-        else if(counter > 2999 && counter < 3900){
+        else if(counter > 2499 && counter < 3900){
             block.style.animation = "block 2.5s infinite linear";
             block2.style.animation = "block2 2.5s 1s infinite linear";
         }
