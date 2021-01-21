@@ -5,6 +5,7 @@ var villain = document.getElementById("villain");
 var weapon = document.getElementById("weapon");
 var counter=0;
 var countervil=0;
+var audioback = new Audio('backgroundmusic.mp3');
 function jump(){
     if(comm == 1){return}
     character.classList.add("animate");
@@ -47,22 +48,27 @@ var checkMonster = setInterval(function() {
         counter=0;
 	}
 }, 10);
-
 var checkDead = setInterval(function() {
+    audioback.play();
     let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
     let blockupperLeft = parseInt(window.getComputedStyle(block2).getPropertyValue("left"));
     if(blockLeft<20 && blockLeft>-20 && characterTop>=168){
+        audioback.pause();
+        audioback.currentTime = 0;
         block.style.animation = "none";
         block2.style.animation = "none";
         alert("Game Over. score: "+Math.floor(counter/100));
         counter=0;
     }
     else if(blockupperLeft<20 && blockupperLeft>-20 && characterTop<=170){
+            audioback.pause();
+            audioback.currentTime = 0;
             block.style.animation = "none";
             block2.style.animation = "none";
             alert("Game Over. score: "+Math.floor(counter/100));
             counter=0;
+
     }
     else{
         counter++;
