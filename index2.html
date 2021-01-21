@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="en" onclick="jump()">
+
 <head>
 	<meta charset="utf-8">
-  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose/pose.js" crossorigin="anonymous"></script>
-    <title>Jump Game</title>
-    <link rel="stylesheet" href="style.css">
+	<script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose/pose.js" crossorigin="anonymous"></script>
+	<title>Jump Game</title>
+	<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="game">
-        <div id="character"></div>
-        <div id="block"></div>
-        <div id="block2"></div>
-        <div id="clock"></div>
-				<div id="villain"></div>
-				<div id="weapon"></div>
-    </div>
-    <p>Score: <span id="scoreSpan"></span></p>
+	<div class="game">
+		<div id="character"></div>
+		<div id="block"></div>
+		<div id="block2"></div>
+		<div id="clock"></div>
+		<div id="villain"></div>
+		<div id="weapon"></div>
+	</div>
+	<p>Score: <span id="scoreSpan"></span></p>
 	<div class="container">
-    <video class="input_video" style="display:none"></video>
-    <canvas class="output_canvas" width="360px" height="240px"></canvas>
+		<video class="input_video" style="display:none"></video>
+		<canvas class="output_canvas" width="360px" height="240px"></canvas>
 </body>
 <script src="posescript2.js"></script>
 <script src="script.js"></script>
+
 </html>
