@@ -6,6 +6,7 @@ var weapon = document.getElementById("weapon");
 var counter=0;
 var countervil=0;
 var audioback = new Audio('backgroundmusic.mp3');
+var gover = new Audio('gameover.wav');
 function jump(){
     if(comm == 1){return}
     character.classList.add("animate");
@@ -42,7 +43,10 @@ var checkMonster = setInterval(function() {
         villain.classList.remove("animatevillain");
     }
 	  else if ((villainright != 600) && ((characterright-villainright)<20)) {
-		    block.style.animation = "none";
+        audioback.pause();
+        audioback.currentTime = 0;
+        gover.play();
+        block.style.animation = "none";
         block2.style.animation = "none";
         alert("Game Over. score: "+Math.floor(counter/100));
         counter=0;
@@ -56,6 +60,7 @@ var checkDead = setInterval(function() {
     if(blockLeft<20 && blockLeft>-20 && characterTop>=168){
         audioback.pause();
         audioback.currentTime = 0;
+        gover.play();
         block.style.animation = "none";
         block2.style.animation = "none";
         alert("Game Over. score: "+Math.floor(counter/100));
@@ -64,6 +69,7 @@ var checkDead = setInterval(function() {
     else if(blockupperLeft<20 && blockupperLeft>-20 && characterTop<=170){
             audioback.pause();
             audioback.currentTime = 0;
+            gover.play();
             block.style.animation = "none";
             block2.style.animation = "none";
             alert("Game Over. score: "+Math.floor(counter/100));
