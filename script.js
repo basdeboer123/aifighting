@@ -5,6 +5,7 @@ var villain = document.getElementById("villain");
 var weapon = document.getElementById("weapon");
 var counter=0;
 var countervil=0;
+var goalspawn = 700;
 var audioback = new Audio('backgroundmusic.mp3');
 var gover = new Audio('gameover.wav');
 function jump(){
@@ -102,8 +103,10 @@ var checkDead = setInterval(function() {
 
         document.getElementById("scoreSpan").innerHTML = Math.floor(counter/100);
         //Function for activating villain, change values for quantity
-        if((counter/100)%7==0 && (counter!= 0)){
+        if(counter == goalspawn){
+		  goalspawn = goalspawn + (100* Math.floor(Math.random() * (6 - 3 + 1)) + 3);
           villainfunc();
+		console.log(goalspawn);
         };
     }
 }, 10);
