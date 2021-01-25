@@ -74,7 +74,7 @@ var checkDead = setInterval(function() {
     gover.play();
     block.style.animation = "none";
     block2.style.animation = "none";
-    alert("Game Over. score: " + Math.floor(-1+(counter + counter2-250) / 100));
+    alert("Game Over. score: " + Math.floor((counter + counter2-250) / 100));
     counter = 0;
     counter2 = 0;
   } else if (blockupperLeft < 8 && blockupperLeft > -20 && characterTop <= 170) {
@@ -83,7 +83,7 @@ var checkDead = setInterval(function() {
     gover.play();
     block.style.animation = "none";
     block2.style.animation = "none";
-    alert("Game Over. score: " + Math.floor(-1+(counter2 + counter-250) / 100));
+    alert("Game Over. score: " + Math.floor((counter2 + counter-250) / 100));
     counter = 0;
     counter2 = 0;
 
@@ -116,7 +116,7 @@ var checkDead = setInterval(function() {
             block2.style.animation = "block2 1.5s 0.5s infinite linear";
         };
 		if (counter > 250){
-			document.getElementById("scoreSpan").innerHTML = Math.floor(-1+(counter2+counter-250)/100);
+			document.getElementById("scoreSpan").innerHTML = Math.floor((counter2+counter-250)/100);
 		}
         ;
         //Function for activating villain, change values for quantity
