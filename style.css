@@ -80,7 +80,7 @@
     position: relative;
     top: 200px;
     left: 1000px;
-    animation: block 6s infinite linear;
+
 }
 @keyframes block{
     0%{left: 1000px}
@@ -94,7 +94,6 @@
     position: relative;
     bottom: 54%;
     left: 1000px;
-    animation: block2 6s infinite linear;
     animation-delay: 2s;
 }
 @keyframes block2{
