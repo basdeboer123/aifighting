@@ -4,6 +4,7 @@ var block2 = document.getElementById("block2");
 var villain = document.getElementById("villain");
 var weapon = document.getElementById("weapon");
 var counter=0;
+var counter2 = 0;
 var countervil=0;
 var goalspawn = 700;
 var audioback = new Audio('backgroundmusic.mp3');
@@ -42,7 +43,7 @@ var checkMonster = setInterval(function() {
     if((villainright != 600) && ((kannuright-villainright) <0) && (kannuright-villainright) >-80){
         weapon.classList.remove("animateshoot");
         villain.classList.remove("animatevillain");
-	counter = counter + 100;
+	counter2 = counter2 + 100;
     }
 	  else if ((villainright != 600) && ((characterright-villainright)<30)) {
         audioback.pause();
@@ -50,8 +51,9 @@ var checkMonster = setInterval(function() {
         gover.play();
         block.style.animation = "none";
         block2.style.animation = "none";
-        alert("Game Over. score: "+Math.floor(counter/100));
+        alert("Game Over. score: "+Math.floor((counter2+counter)/100));
         counter=0;
+	counter2 = 0;
 	}
 }, 10);
 var checkDead = setInterval(function() {
@@ -65,8 +67,9 @@ var checkDead = setInterval(function() {
         gover.play();
         block.style.animation = "none";
         block2.style.animation = "none";
-        alert("Game Over. score: "+Math.floor(counter/100));
+        alert("Game Over. score: "+Math.floor((counter+counter2)/100));
         counter=0;
+	counter2 = 0 ;
     }
     else if(blockupperLeft<8 && blockupperLeft>-20 && characterTop<=170){
             audioback.pause();
@@ -74,8 +77,9 @@ var checkDead = setInterval(function() {
             gover.play();
             block.style.animation = "none";
             block2.style.animation = "none";
-            alert("Game Over. score: "+Math.floor(counter/100));
+            alert("Game Over. score: "+Math.floor((counter2 + counter)/100));
             counter=0;
+	    counter2 = 0;
 
     }
     else{
@@ -102,12 +106,12 @@ var checkDead = setInterval(function() {
             block2.style.animation = "block2 1.5s 0.5s infinite linear";
         };
 
-        document.getElementById("scoreSpan").innerHTML = Math.floor(counter/100);
+        document.getElementById("scoreSpan").innerHTML = Math.floor((counter+counter2)/100);
         //Function for activating villain, change values for quantity
         if(counter == goalspawn){
 		  goalspawn = goalspawn + (100* Math.floor(Math.random() * (6 - 3 + 1)) + 3);
           villainfunc();
-		console.log(goalspawn);
+	
         };
     }
 }, 10);
