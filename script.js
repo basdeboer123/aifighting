@@ -74,7 +74,7 @@ var checkDead = setInterval(function() {
     gover.play();
     block.style.animation = "none";
     block2.style.animation = "none";
-    alert("Game Over. score: " + Math.floor((counter + counter2) / 100));
+    alert("Game Over. score: " + Math.floor((counter + counter2-250) / 100));
     counter = 0;
     counter2 = 0;
   } else if (blockupperLeft < 8 && blockupperLeft > -20 && characterTop <= 170) {
@@ -83,7 +83,7 @@ var checkDead = setInterval(function() {
     gover.play();
     block.style.animation = "none";
     block2.style.animation = "none";
-    alert("Game Over. score: " + Math.floor((counter2 + counter) / 100));
+    alert("Game Over. score: " + Math.floor((counter2 + counter-250) / 100));
     counter = 0;
     counter2 = 0;
 
