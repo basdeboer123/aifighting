@@ -85,25 +85,25 @@ var checkDead = setInterval(function() {
     else{
         counter++;
         //Values for boundaries can be adjusted to smoothen the gameplay
-        if(counter > 100 && counter < 900){
+        if(counter > 100 && counter < 950){
             block.style.animation = "block 4s infinite linear";
             block2.style.animation = "block2 4s 2s infinite linear";
         }
-        else if(counter > 899 && counter < 2500){
+        else if(counter > 949 && counter < 1700){
+            block.style.animation = "block 3.5s infinite linear";
+            block2.style.animation = "block2 3.5s 1.7s infinite linear";
+        }
+        else if(counter > 1699 && counter < 2500){
             block.style.animation = "block 3s infinite linear";
             block2.style.animation = "block2 3s 1.5s infinite linear";
         }
-        else if(counter > 2499 && counter < 3900){
+        else if(counter > 2499 && counter < 3150){
             block.style.animation = "block 2.5s infinite linear";
             block2.style.animation = "block2 2.5s 1s infinite linear";
         }
-        else if(counter > 3999 && counter < 4750){
+        else if(counter > 3149 && counter < 6000){
             block.style.animation = "block 2s infinite linear";
-            block2.style.animation = "block2 2s 0.5s infinite linear";
-        }
-        else if(counter > 4749 && counter < 6000){
-            block.style.animation = "block 1.5s infinite linear";
-            block2.style.animation = "block2 1.5s 0.5s infinite linear";
+            block2.style.animation = "block2 2s 1s infinite linear";
         };
 
         document.getElementById("scoreSpan").innerHTML = Math.floor((counter+counter2)/100);
@@ -111,7 +111,7 @@ var checkDead = setInterval(function() {
         if(counter == goalspawn){
 		  goalspawn = goalspawn + (100* Math.floor(Math.random() * (6 - 3 + 1)) + 3);
           villainfunc();
-	
+
         };
     }
 }, 10);
