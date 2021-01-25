@@ -44,7 +44,7 @@ var checkMonster = setInterval(function() {
         villain.classList.remove("animatevillain");
 	counter = counter + 100;
     }
-	  else if ((villainright != 600) && ((characterright-villainright)<20)) {
+	  else if ((villainright != 600) && ((characterright-villainright)<30)) {
         audioback.pause();
         audioback.currentTime = 0;
         gover.play();
@@ -59,7 +59,7 @@ var checkDead = setInterval(function() {
     let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
     let blockupperLeft = parseInt(window.getComputedStyle(block2).getPropertyValue("left"));
-    if(blockLeft<20 && blockLeft>-20 && characterTop>=168){
+    if(blockLeft<-15 && blockLeft>-30 && characterTop>=168){
         audioback.pause();
         audioback.currentTime = 0;
         gover.play();
@@ -68,7 +68,7 @@ var checkDead = setInterval(function() {
         alert("Game Over. score: "+Math.floor(counter/100));
         counter=0;
     }
-    else if(blockupperLeft<20 && blockupperLeft>-20 && characterTop<=170){
+    else if(blockupperLeft<8 && blockupperLeft>-20 && characterTop<=170){
             audioback.pause();
             audioback.currentTime = 0;
             gover.play();

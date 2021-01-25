@@ -57,7 +57,7 @@
   0%{right: : 350px;}
   30%{right: 700px;}
   70%{right: 1050px;}
-  100%{right: 1380px;}
+  100%{right: 1390px;}
 }
 @keyframes jump{
     0%{top: 170px;}
