@@ -42,6 +42,7 @@ var checkMonster = setInterval(function() {
     if((villainright != 600) && ((kannuright-villainright) <0) && (kannuright-villainright) >-80){
         weapon.classList.remove("animateshoot");
         villain.classList.remove("animatevillain");
+	counter = counter + 100;
     }
 	  else if ((villainright != 600) && ((characterright-villainright)<20)) {
         audioback.pause();
