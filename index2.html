@@ -11,15 +11,6 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 
-<script>
-function unhide() {
-    var hid = document.getElementsByClassName("exp");
-    // Emulates jQuery $(element).is(':hidden');
-    if(hid[0].offsetWidth > 0 && hid[0].offsetHeight > 0) {
-        hid[0].style.visibility = "visible";
-    }
-}
-</script>
 
 <body>
 	<div class="game">
@@ -31,9 +22,8 @@ function unhide() {
 		<div id="weapon"></div>
 	</div>
 	<p>Score: <span id="scoreSpan"></span></p>
-	<style>
-	.exp{visibility: hidden;}
 
+	<style>
 	.exp {
 		border: 1px;
 		border-style: solid;
@@ -45,25 +35,8 @@ function unhide() {
 		display: block;
 		padding-bottom: 2.5rem;
   }
-
-	.button {
-		background-color: #ffffff;
-		border: 1px solid rgb(0, 0, 0);
-		color: rgb(0, 0, 0);
-		padding: 10px 10px;
-		text-align: center;
-		text-decoration: none;
-		display: block;
-		font-size: 22px;
-		margin: auto;
-		width: 150px;
-		height: 50px;
-		cursor: pointer;
-	}
 	</style>
 
-
-	<button class="button" onclick="unhide()">Instructions</button>
 	<div class="exp">
 		<p class="and">
 			<h1>
@@ -87,7 +60,6 @@ function unhide() {
 				</li>
       </p>
 	</div>
-
 
 	<div class="container">
 		<video class="input_video" style="display:none"></video>
