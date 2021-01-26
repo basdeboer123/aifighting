@@ -49,8 +49,11 @@ var checkMonster = setInterval(function() {
   let kannuright = parseInt(window.getComputedStyle(weapon).getPropertyValue("right"));
   let characterright = parseInt(window.getComputedStyle(character).getPropertyValue("right"));
   if ((villainright != 600) && ((kannuright - villainright) < 0) && (kannuright - villainright) > -80) {
+    audioback.pause();
     weapon.classList.remove("animateshoot");
     villain.classList.remove("animatevillain");
+    oof.play();
+    audioback.play();
     counter2 = counter2 + 100;
   } else if ((villainright != 600) && ((characterright - villainright) < 30)) {
     audioback.pause();
