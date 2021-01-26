@@ -90,12 +90,11 @@ var checkDead = setInterval(function() {
   } else{
         counter++;
         //Values for boundaries can be adjusted to smoothen the gameplay
-		if (counter < 250){
+		if (counter < 400){
 			document.getElementById("scoreSpan").innerHTML = 0;
-		
-			
+
 		}
-        else if(counter >= 250 && counter <= 900){
+        else if(counter >= 400 && counter <= 900){
             block.style.animation = "block 4s infinite linear";
             block2.style.animation = "block2 4s 2s infinite linear";
         }
