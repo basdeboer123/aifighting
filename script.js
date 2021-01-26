@@ -9,7 +9,7 @@ var countervil = 0;
 var goalspawn = 700;
 var audioback = new Audio('backgroundmusic.mp3');
 var gover = new Audio('gameover.wav');
-
+sessionStorage.setItem("Nose", 0);
 function jump() {
   if (comm == 1) {
     return
@@ -61,6 +61,7 @@ var checkMonster = setInterval(function() {
     alert("Game Over. score: " + Math.floor((counter2 + counter) / 100));
     counter = 0;
     counter2 = 0;
+     Nose = 0;
   }
 }, 10);
 var checkDead = setInterval(function() {
@@ -77,6 +78,7 @@ var checkDead = setInterval(function() {
     alert("Game Over. score: " + Math.floor((counter + counter2-250) / 100));
     counter = 0;
     counter2 = 0;
+    Nose = 0;
   } else if (blockupperLeft < 8 && blockupperLeft > -20 && characterTop <= 170) {
     audioback.pause();
     audioback.currentTime = 0;
@@ -86,15 +88,19 @@ var checkDead = setInterval(function() {
     alert("Game Over. score: " + Math.floor((counter2 + counter-250) / 100));
     counter = 0;
     counter2 = 0;
-
+    Nose = 0;
   } else{
-        counter++;
-        //Values for boundaries can be adjusted to smoothen the gameplay
-		if (counter < 400){
+		Nose = sessionStorage.getItem('Nose');
+        if (Nose > 0){
+			counter++;
+		
+		//Values for boundaries can be adjusted to smoothen the gameplay
+		if (counter < 250){
 			document.getElementById("scoreSpan").innerHTML = 0;
-
+		
+			
 		}
-        else if(counter >= 400 && counter <= 900){
+        else if(counter >= 250 && counter <= 900){
             block.style.animation = "block 4s infinite linear";
             block2.style.animation = "block2 4s 2s infinite linear";
         }
@@ -124,5 +130,8 @@ var checkDead = setInterval(function() {
           villainfunc();
 		console.log(goalspawn);
         };
-    }
+  };
+  else if (Nose == 0}{
+	  document.getElementById("scoreSpan").innerHTML = 0;
+  }
 }, 10);
