@@ -26,7 +26,7 @@ function onResults(results) {
     color: '#FF0000',
     lineWidth: 2
   });
-
+sessionStorage.setItem("Nose", results.poseLandmarks[0]['y']);
   const kekw = results.poseLandmarks[10]['y'];
   center_update = center_update + kekw
   if (kekw != 0 && cdtime <= 0 && comm == 0) {
