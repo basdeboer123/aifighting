@@ -8,6 +8,7 @@ var counter2 = 0;
 var countervil = 0;
 var goalspawn = 700;
 var audioback = new Audio('backgroundmusic.mp3');
+var oof = new Audio('oof.wav');
 var gover = new Audio('gameover.wav');
 
 function jump() {
