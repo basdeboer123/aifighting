@@ -3,6 +3,13 @@
     margin: 0;
     overflow-x: hidden;
 }
+body {
+ background-color: #ADD8E6;
+}
+p{
+    text-align: center;
+}
+/* style of the box of the game */
 .game{
     width: 1000px;
     height: 400px;
@@ -11,6 +18,7 @@
     position: center;
     margin: auto;
 }
+/* style of the character controlled by the player */
 #character{
     background-image: url("slp.gif");
     position:fixed;
@@ -18,6 +26,7 @@
     width: 30px;
     height: 42px;
 }
+/* style of the bullit */
 #weapon{
     background-image: url("bullit.gif");
     position:fixed;
@@ -25,7 +34,26 @@
     width: 18px;
     height: 20px;
 }
-
+/* style of the lower obstacle */
+#block{
+    background-image: url("tree.gif");
+    width: 90px;
+    height: 200px;
+    position: relative;
+    top: 200px;
+    left: 1000px;
+}
+/* style of the upper obstacle */
+#block2{
+    background-image: url("spider.gif");
+    width: 70px;
+    height: 200px;
+    position: relative;
+    bottom: 54%;
+    left: 1000px;
+    animation-delay: 2s;
+}
+/* style of the monster */
 #villain{
   background-image: url("vil.gif");
   position: fixed;
@@ -34,10 +62,11 @@
   width: 44px;
   height: 58px;
 }
+
+/* functions for animation, time can be adjusted as desired */
 .animate{
     animation: jump 1s linear;
 }
-
 .animatedown{
     animation: jumpdown 1s linear;
 }
@@ -47,6 +76,7 @@
 .animatevillain{
     animation: villainmove 4s linear;
 }
+/* path of the animations (from where to where they move) */
 @keyframes shoot{
     0%{left: 300px;}
     30%{left: 450px;}
@@ -65,56 +95,17 @@
     70%{top: 60px;}
     100%{top: 170px;}
 }
-
 @keyframes jumpdown{
     0%{top: 170px;}
     30%{top: 240px;}
     70%{top: 280px;}
     100%{top: 170px;}
 }
-
-#block{
-    background-image: url("tree.gif");
-    width: 90px;
-    height: 200px;
-    position: relative;
-    top: 200px;
-    left: 1000px;
-
-}
 @keyframes block{
     0%{left: 1000px}
     100%{left: -80px}
 }
-
-#block2{
-    background-image: url("spider.gif");
-    width: 70px;
-    height: 200px;
-    position: relative;
-    bottom: 54%;
-    left: 1000px;
-    animation-delay: 2s;
-}
 @keyframes block2{
     0%{left: 1000px}
     100%{left: -80px}
-}
-
-
-/* #clock{
-    width: 70px;
-    height: 70px;
-    border-radius: 15px;
-    background-color: red;
-    position: relative;
-    top: -100px;
-    left: 400px;
-}
-*/
-body {
- background-color: #ADD8E6;
-}
-p{
-    text-align: center;
 }

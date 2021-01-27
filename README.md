@@ -16,7 +16,7 @@ in the game can be controlled with your head and body movement.
 ## Features
 
 This game is created using JavaScript, the script for Blaze Pose is also in JavaScript.
-We used HTML and CSS for the lay-out and features(moving obstacles, enemy) in the game.
+We used HTML and CSS for the lay-out and features (moving obstacles, enemy, character) in the game.
 
 
 ## how_to_play
