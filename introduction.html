@@ -5,101 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Fighting Challange</title>
-  <style>
-    * {
-      padding: 0;
-      margin: 0;
-      overflow-x: hidden;
-    }
 
-    body {
-      background-color: #ADD8E6;
-      font-family: 'Courier New', Courier, monospace;
-    }
-
-    header {
-      text-align: center;
-      padding: 25px;
-    }
-
-    .game {
-      width: 1000px;
-      height: 400px;
-      border: 1px solid black;
-      margin: auto;
-      background-image: url("cloud_background.gif");
-      background-color: #ADD8E6;
-      background-size: cover;
-      align-items: center;
-      justify-content: center;
-      display: flex;
-    }
-
-    .container {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      margin-top: 0px;
-    }
-
-    .button {
-      background-color: #ffffff;
-      border: 1px solid rgb(0, 0, 0);
-      color: rgb(0, 0, 0);
-      padding: 10px 10px;
-      text-align: center;
-      text-decoration: none;
-      display: block;
-      font-size: 22px;
-      margin: 10px;
-      width: 150px;
-      height: 50px;
-      cursor: pointer;
-    }
-
-    .introduction {
-      align-items: center;
-      width: 500px;
-      margin: auto;
-      padding: 25px;
-      display: block;
-      padding-bottom: 2.5rem;
-    }
-
-    ul {
-      list-style-type: circle;
-    }
-
-    #how {
-      margin: auto;
-    }
-
-    footer {
-      bottom: 0;
-      width: 500px;
-      height: 2.5rem;
-      text-align: center;
-      margin: auto;
-    }
-
-    input {
-      background-color: #ffffff;
-      border: 1px solid rgb(0, 0, 0);
-      color: rgb(0, 0, 0);
-      padding: 10px 10px;
-      text-align: center;
-      text-decoration: none;
-      display: block;
-      font-size: px;
-      /* margin: 10px; */
-      width: 150px;
-      /* height: 50px; */
-      cursor: pointer;
-    }
-
-    /* .write {} */
-  </style>
-
+  <!--Functions for display buttons on introduction page(why, how, play)-->
   <script>
     function showWhy() {
       var x = document.getElementById("why");
@@ -143,23 +50,18 @@
 </head>
 
 <body>
-  <!-- <iframe src="test_eurovision.mp3" allow="autoplay" id="iframeAudio">
-    </iframe> -->
-
-  <!-- <audio autoplay loop id="playAudio">
-        <source src="test_eurovision.mp3">
-    </audio> -->
-
   <header>
     <h1>Fighting The Alarm</h1>
   </header>
 
   <div class="game">
+    <!--Buttons on introduction page(why, how, play)-->
     <div id="button-wrap" class="container" style="display: flex">
       <button class="button" type="button" onclick="askName()">PLAY</button>
       <button class=" button" type="button" onclick="showWhy() ">WHY?</button>
       <button class="button" type="button" onclick="showHow() ">HOW?</button>
     </div>
+    <!--Box for input name-->
     <div>
       <form id="name" style="display: none;">
         Enter your name: <input type="text" name="fname"><br><br>
@@ -167,7 +69,7 @@
       </form>
     </div>
   </div>
-
+  <!--Explanations about how and why we made the game-->
   <div class="introduction ">
     <div id="why" style="display: none;">
       <h1>
@@ -211,3 +113,95 @@
 </body>
 
 </html>
+
+<!--Style sheet for introduction.html-->
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  body {
+    background-color: #ADD8E6;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  header {
+    text-align: center;
+    padding: 25px;
+  }
+
+  .game {
+    width: 1000px;
+    height: 400px;
+    border: 1px solid black;
+    margin: auto;
+    background-image: url("cloud_background.gif");
+    background-color: #ADD8E6;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 0px;
+  }
+
+  .button {
+    background-color: #ffffff;
+    border: 1px solid rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 22px;
+    margin: 10px;
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+  }
+
+  .introduction {
+    align-items: center;
+    width: 500px;
+    margin: auto;
+    padding: 25px;
+    display: block;
+    padding-bottom: 2.5rem;
+  }
+
+  ul {
+    list-style-type: circle;
+  }
+
+  #how {
+    margin: auto;
+  }
+
+  footer {
+    bottom: 0;
+    width: 500px;
+    height: 2.5rem;
+    text-align: center;
+    margin: auto;
+  }
+
+  input {
+    background-color: #ffffff;
+    border: 1px solid rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: px;
+    width: 150px;
+    cursor: pointer;
+  }
+</style>
