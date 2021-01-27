@@ -34,17 +34,18 @@ function onResults(results) {
       console.log("Spring");
       cdtime = 30;
       jump()
-    } else if (results.poseLandmarks[19]['y'] < results.poseLandmarks[11]['y']) {
+    }
+    else if (results.poseLandmarks[19]['y'] < results.poseLandmarks[11]['y']) {
       console.log("Buk");
       cdtime = 30;
       comm = -1;
       jumpdown()
     }
-  } else if (prevkekw == 0) {
+  }
+  else if (prevkekw == 0) {
     centery = kekw;
-
-
-  } else {
+  }
+  else {
     cdtime--;
     comm = 0;
   };
@@ -64,10 +65,7 @@ function onResults(results) {
   }
   prevkekw = kekw;
   canvasCtx.restore();
-
-
 };
-
 
 const pose = new Pose({
   locateFile: (file) => {
