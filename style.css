@@ -78,10 +78,10 @@ p{
 }
 /* path of the animations (from where to where they move) */
 @keyframes shoot{
-    0%{left: 300px;}
-    30%{left: 450px;}
-    70%{left: 650px;}
-    100%{left: 800px;}
+    0%{right: 1390px;}
+    30%{right: 1200px;}
+    65%{right: 1000px;}
+    100%{right: 800px;}
 }
 @keyframes villainmove{
   0%{right: : 350px;}
