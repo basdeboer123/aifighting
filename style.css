@@ -71,17 +71,17 @@ p{
     animation: jumpdown 1s linear;
 }
 .animateshoot{
-    animation: shoot 1s linear;
+    animation: shoot 0.5s linear;
 }
 .animatevillain{
     animation: villainmove 4s linear;
 }
 /* path of the animations (from where to where they move) */
 @keyframes shoot{
-    0%{right: 1390px;}
-    30%{right: 1200px;}
-    65%{right: 1000px;}
-    100%{right: 800px;}
+    0%{left: 420px;}
+    30%{left: 600px;}
+    65%{left: 780px;}
+    100%{left: 1000px;}
 }
 @keyframes villainmove{
   0%{right: : 350px;}
