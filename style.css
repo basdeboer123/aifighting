@@ -7,7 +7,7 @@
     width: 1000px;
     height: 400px;
     border: 1px solid black;
-    background-image: url("skyy.svg");
+    background-image: url("sky.svg");
     position: center;
     margin: auto;
 }
@@ -74,7 +74,7 @@
 }
 
 #block{
-    background-image: url("boom2.gif");
+    background-image: url("tree.gif");
     width: 90px;
     height: 200px;
     position: relative;
@@ -88,7 +88,7 @@
 }
 
 #block2{
-    background-image: url("spin.gif");
+    background-image: url("spider.gif");
     width: 70px;
     height: 200px;
     position: relative;
