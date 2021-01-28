@@ -117,26 +117,34 @@ var checkDead = setInterval(function() {
   			document.getElementById("scoreSpan").innerHTML = 0;
   		}
       //Values for speed increment boundaries can be adjusted to smoothen the gameplay or speed up the gameplay
-      else if(counter >= 100 && counter <= 900){
-        block.style.animation = "block 4s infinite linear";
-        block2.style.animation = "block2 4s 2s infinite linear";
+      else if(counter >= 100 && counter <= 800){
+        block.style.animation = "block 4s 4 linear";
+        block2.style.animation = "block2 4s 2s 4 linear";
       }
-      else if(counter > 900 && counter < 2500){
-        block.style.animation = "block 4s infinite linear";
-        block2.style.animation = "block2 4s 2s infinite linear";
+      else if(counter > 800 && counter < 820){
+        block.style.animation = "none";
+        block2.style.animation = "none";
       }
-      else if(counter > 2499 && counter < 3900){
+      else if(counter > 819 && counter < 1750){
+        block.style.animation = "block 3.5s 7 linear";
+        block2.style.animation = "block2 3.5s 2s 7 linear";
+      }
+      else if(counter > 1749 && counter < 1770){
+        block.style.animation = "none";
+        block2.style.animation = "none";
+      }
+      else if(counter > 1799 && counter < 2600){
+        block.style.animation = "block 3s 9 linear";
+        block2.style.animation = "block2 3s 1.5s 9 linear";
+      }
+      else if(counter > 2599 && counter < 2620){
+        block.style.animation = "none";
+        block2.style.animation = "none";
+      }
+      else if(counter > 2619){
         block.style.animation = "block 2.5s infinite linear";
         block2.style.animation = "block2 2.5s 1s infinite linear";
       }
-      else if(counter > 3999 && counter < 4750){
-        block.style.animation = "block 2s infinite linear";
-        block2.style.animation = "block2 2s 0.5s infinite linear";
-      }
-      else if(counter > 4749 && counter < 6000){
-        block.style.animation = "block 1.5s infinite linear";
-        block2.style.animation = "block2 1.5s 0.5s infinite linear";
-      };
   		if (counter > 140){
   			document.getElementById("scoreSpan").innerHTML = Math.floor((counter2+counter-140)/100);
   		};
