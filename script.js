@@ -133,15 +133,15 @@ var checkDead = setInterval(function() {
         block.style.animation = "none";
         block2.style.animation = "none";
       }
-      else if(counter > 1799 && counter < 2600){
+      else if(counter > 1799 && counter < 2700){
         block.style.animation = "block 3s 9 linear";
         block2.style.animation = "block2 3s 1.5s 9 linear";
       }
-      else if(counter > 2599 && counter < 2620){
+      else if(counter > 2699 && counter < 2720){
         block.style.animation = "none";
         block2.style.animation = "none";
       }
-      else if(counter > 2619){
+      else if(counter > 2719){
         block.style.animation = "block 2.5s infinite linear";
         block2.style.animation = "block2 2.5s 1s infinite linear";
       }
